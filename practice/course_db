@@ -1,0 +1,15 @@
+{
+  "linux": [
+    "course_type:技术",
+    "course_name:linux",
+    "course_price:10000",
+    "course_period:6month"
+  ]
+}{
+  "python": [
+    "course_type:技术",
+    "course_name:python",
+    "course_price:13000",
+    "course_period:6"
+  ]
+}

@@ -1,0 +1,18 @@
+{
+  "lisi": [
+    "mem_name:lisi",
+    "mem_age:22",
+    "mem_gender:M",
+    "stu_course:LINUX",
+    "stu_tuition:12000"
+  ]
+}
+{
+  "wangwu": [
+    "mem_name:wangwu",
+    "mem_age:21",
+    "mem_gender:M",
+    "stu_course:python",
+    "stu_tuition:13000"
+  ]
+}

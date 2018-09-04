@@ -1,0 +1,17 @@
+{
+  "Tracy": [
+    "mem_name:Tracy",
+    "mem_age:23",
+    "mem_gender:M",
+    "tea_course:linux",
+    "tea_salary:15000"
+  ]
+}{
+  "kobe": [
+    "mem_name:kobe",
+    "mem_age:24",
+    "mem_gender:M",
+    "tea_course:python",
+    "tea_salary:23000"
+  ]
+}
