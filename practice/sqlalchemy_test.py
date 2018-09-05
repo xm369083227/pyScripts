@@ -15,6 +15,12 @@ class User(Base):
     id = Column(Integer,primary_key=True)
     name = Column(String(64))
     password = Column(String(32))
+class Students(Base):
+    __tablename__ = 'students'#表名
+    id = Column(Integer,primary_key=True)
+    name = Column(String(64))
+    age = Column(String(32))
+    gender = Column(String(32))
 
 Base.metadata.create_all(engine)#创建表结构
 
@@ -29,13 +35,17 @@ session = Session_class()#生成session实例
 
 #查询
 #my_user = session.query(User).filter_by(name="xm").all()#生成一个数据库对象
-my_user = session.query(User).filter(User.id>1).all()#返回一个列表对象
-print(my_user[0].id,my_user[0].name,my_user[0].password)
+#my_user = session.query(User).filter(User.id>1).all()#返回一个列表对象
 
-#修改
-my_user1 = session.query(User).filter_by(id=2).first()#first方法直接返回一个对象
-my_user1.name = "Jack"
+#两个表连表查询
+my_user = session.query(User,Students).filter(User.id == Students.id).all()#查询两个表中的数据返回给列表中存2个列表对象
+#print(my_user[0].id,my_user[0].name,my_user[0].password)
+print(my_user[0][1].name)
 
-#删除
-my_user2 = session.query(User).filter_by(id=3).delete()
-session.commit()#这时才将user对象提交到session对象中
+# #修改
+# my_user1 = session.query(User,Students).filter(User.id == Students.id).first()#first方法直接返回一个对象
+# my_user1.name = "Jack"
+#
+# #删除
+# my_user2 = session.query(User).filter_by(id=3).delete()
+# session.commit()#这时才将user对象提交到session对象中
