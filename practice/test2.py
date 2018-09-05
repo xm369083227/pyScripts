@@ -11,4 +11,4 @@ class Student(object):
 s = Student("zhangsan",22)
 
 
-print(s.prn_obj())
+print(s.prn_obj(),s.name)
