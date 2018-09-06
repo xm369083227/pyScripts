@@ -2,13 +2,11 @@
 #coding:utf8
 
 class Student(object):
-    def __init__(self,name,age):
+    def __init__(self,name,age,gender):
         self.name = name
         self.age = age
+        self.gender = gender
+def test(self):
+        self.gender = gender
 
-    def prn_obj(obj):
-        print('\n'.join(['%s:%s' % item for item in obj.__dict__.items()]))
-s = Student("zhangsan",22)
-
-
-print(s.prn_obj(),s.name)
+s = Student("x",23,"M")
