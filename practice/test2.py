@@ -6,7 +6,8 @@ class Student(object):
         self.name = name
         self.age = age
         self.gender = gender
-def test(self):
+
+s1 = Student("zhangsan",23,"M")
 
 
-s = Student("x",23,"M")
+
