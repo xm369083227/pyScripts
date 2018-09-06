@@ -7,6 +7,6 @@ class Student(object):
         self.age = age
         self.gender = gender
 def test(self):
-        self.gender = gender
+
 
 s = Student("x",23,"M")

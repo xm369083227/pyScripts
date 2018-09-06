@@ -1,10 +1,13 @@
 #author:xm
 #coding:utf-8
 import os,sys,platform
-from classroom import Classroom
-from course import Course
-from teacher import Teacher
-from student import Student
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0,BASE_DIR)
+# #print(sys.path)
+from .classroom import Classroom
+from .course import Course
+from .teacher import Teacher
+from .student import Student
 
 class School(object):
     '''学校类包含名称，地址，课程，班级，老师等'''
@@ -29,16 +32,16 @@ class School(object):
                                                            course_obj.course_time,))
     def create_class(self,class_name,course_obj):
         class_obj = Classroom(class_name, course_obj)
-        self.school_class[class_name] = class_obj
+        self.school_classroom[class_name] = class_obj
 
     def show_class(self):
-        for key in self.school_class:
-            class_obj = self.school_class[key]
+        for key in self.school_classroom:
+            class_obj = self.school_classroom[key]
             print("\33[32;1m班级：%s\t关联课程：%s\33[0m" % (class_obj.class_name, class_obj.class_course.course_name))
 
     def show_class_course(self):
-        for key in self.school_class:
-            class_obj = self.school_class[key]
+        for key in self.school_classroom:
+            class_obj = self.school_classroom[key]
             course_obj = class_obj.class_course
             print("\33[32;1m班级：%s\t关联课程：%s\t价格：%s\t周期：%s月\33[0m" % (class_obj.class_name, course_obj.course_name,
                                                                     course_obj.course_price, course_obj.course_time))
@@ -67,16 +70,16 @@ class School(object):
     def create_student(self, student_name, student_age, class_choice):
         '''注册学生'''
         student_obj = Student(student_name, student_age)  # 生成学生实例
-        class_obj = self.school_class[class_choice]  # 获取学生所注册班级的实例对象
+        class_obj = self.school_classroom[class_choice]  # 获取学生所注册班级的实例对象
         class_obj.class_student[student_name] = student_obj  # 班级实例里添加学生信息
-        self.school_class[class_choice] = class_obj  # 学校班级字典更新
+        self.school_classroom[class_choice] = class_obj  # 学校班级字典更新
 
     def show_teacher_classinfo(self, teacher_name):
         teacher_obj = self.school_teacher[teacher_name]
-        for i in teacher_obj.teacher_calss:
-            class_obj = self.school_class[i]
+        for i in teacher_obj.teacher_class:
+            class_obj = self.school_classroom[i]
             student_list = []
             for k in class_obj.class_student:
                 student_list.append(k)
-            print("\33[32;1m班级：%s\t关联课程：%s\t学员:%s\33[0m" % (class_obj.class_name, class_obj.class_courese.course_name,
+            print("\33[32;1m班级：%s\t关联课程：%s\t学员:%s\33[0m" % (class_obj.class_name, class_obj.class_course.course_name,
                                                             student_list))
