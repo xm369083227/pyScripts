@@ -48,4 +48,6 @@ print(my_user[0][1].name)
 #
 # #删除
 # my_user2 = session.query(User).filter_by(id=3).delete()
-# session.commit()#这时才将user对象提交到session对象中
+session.commit()#这时才将user对象提交到session对象中
+
+
