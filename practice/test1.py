@@ -67,3 +67,4 @@ setattr(d,"talk",bulk)
 setattr(d,"gender","M")
 getattr(d,"talk")()
 print(getattr(d,"gender"))
+

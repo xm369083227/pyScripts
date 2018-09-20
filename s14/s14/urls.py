@@ -22,3 +22,4 @@ urlpatterns = [
     path(r'home/', views.home),
     path(r'login/', views.login),
 ]
+

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tab菜单练习</title>
+    <script
+      src="https://code.jquery.com/jquery-1.12.4.js"
+      integrity="sha256-Qw82+bXyGq6MydymqBxNPYTaUXXq7c8v3CwiYwLLNXU="
+      crossorigin="anonymous">
+    </script>
+    <style>
+        *{
+            margin:0;
+            padding:0;
+        }
+        .menu{
+            width:600px;
+            height:100px;
+            margin:0 auto;
+            border: 1px solid #eee;
+            text-align:center;
+        }
+        .menu ul{
+            list-style:none;
+            margin:40px 100px;
+        }
+         .menu ul li {
+            text-decoration-style: none;
+            margin-right:10px;
+            height:20px;
+            #line-height:100px;
+            float: left;
+            border-right: 1px solid #eee;
+        }
+        .content{
+            width:600px;
+            height:400px;
+            margin:0 auto;
+            text-align:left;
+            border:1px solid #ccc;
+        }
+        .active{
+            background:brown;
+        }
+        .hide{
+            display:none;
+        }
+        .show{
+            display:block;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="menu">
+        <ul>
+            <li calss="active">菜单一</li>
+            <li>菜单二</li>
+            <li>菜单三</li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="item ">内容一</div>
+        <div class="item hide">内容二</div>
+        <div class="item hide">内容三</div>
+    </div>
+    <script>
+        $('li').click(function(){
+            var index = $(this).index()
+            $(this).addClass('active').siblings().removeClass('active')
+            $('.item').eq(index).removeClass('hide').siblings().addClass('hide')
+        })
+
+    </script>
+</body>
+</html>

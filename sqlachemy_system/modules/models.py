@@ -11,7 +11,7 @@ from conf.settings import engine
 ############创建数据表结构######################3
 Base = declarative_base()
 
-# 班级与学生的对应关系表
+# 老师与班级的对应关系表
 teacher_m2m_class = Table("teacher_m2m_class",Base.metadata,
                           Column("teacher_id", Integer, ForeignKey("teacher.teacher_id")),
                           Column("class_id", Integer, ForeignKey("class.class_id")),
