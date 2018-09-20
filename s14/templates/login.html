@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆页面</title>
+    <link rel="stylesheet" href="/static/commons.css">
+    <style>
+        label{
+            width:80px;
+            text-align:right;
+        }
+    </style>
+</head>
+<body>
+    <form action="/login/" method="post">
+        <p>
+            <label for="user">用户名:</label>
+            <input type="text" name="user">
+        </p>
+        <p>
+            <label for="pwd">密&nbsp;&nbsp;&nbsp;码:</label>
+            <input type="password" name="pwd">
+        </p>
+        <p>
+            <input type="submit" value="提交">
+            <span style="color:red">{{ error_msg }}</span>
+        </p>
+    </form>
+</body>
+</html>
